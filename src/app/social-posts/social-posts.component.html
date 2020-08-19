@@ -1,0 +1,14 @@
+<app-header></app-header>
+<app-post-form
+  class="app-post-form"
+  (submitted)="onSubmit($event)"
+></app-post-form>
+<main class="main">
+  <ul class="post-container">
+    <app-post
+      *ngFor="let post of posts; index as i"
+      [post]="post"
+      (deleted)="onDelete(i)"
+    ></app-post>
+  </ul>
+</main>
